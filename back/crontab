@@ -1,0 +1,12 @@
+00 20 * * 1-5 cd /dailydata/cffexinterest;date >> date.log;java -jar cffex.jar &>> date.log
+00 20 * * 1-5 cd /dailydata/shfeinterest;date >> date.log;java -jar shfe.jar &>> date.log
+00 20 * * 1-5 cd /dailydata/dceinterest;date >> date.log;java -jar dce.jar &>> date.log
+00 20 * * 1-5 cd /dailydata/czceinterest;date >> date.log;java -jar czce.jar &>> date.log
+00 20 * * 1-5 cd /dailydata/cffexquote;date >> date.log;java -jar cffexquote.jar &>> date.log
+00 20 * * 1-5 cd /dailydata/dcequote;date >> date.log;java -jar dcequote.jar &>> date.log
+00 20 * * 1-5 cd /dailydata/czcequote;date >> date.log;java -jar czcequote.jar &>> date.log
+00 20 * * 1-5 cd /dailydata/shfequote;date >> date.log;java -jar shfequote.jar &>> date.log
+10 20 * * 1-5 kill -9 `ps aux | grep jar | awk '{print $2}'`
+10 20 * * 1-5 sh /dailydata/shell/senddate
+30 20 * * 1-5 sh /dailydata/shell/update.sh
+30 20 * * 1-5 sh /dailydata/update/dailyupdate.sh

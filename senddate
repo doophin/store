@@ -1,0 +1,1 @@
+python /dailydata/shell/back/send.py koi `sh /dailydata/shell/back/senddate`
